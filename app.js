@@ -26,8 +26,7 @@ const storage=multer.diskStorage({
 });
 
 const upload= multer({
-    storage: storage,
-    limits: {fileSize: 6000}
+    storage: storage
 }).single('postphoto');
 
 var _ = require('lodash');
@@ -83,34 +82,10 @@ app.post("/compose",(req,res) => {
         }
     });
 
-    // const newpost=new post({
-    //     title:request.body.posttitle,
-    //     postBody:request.body.postbody,
-    //     update: dateStr
-    // });
-    
    
     
 }); 
-// app.post("/upload", (req,res) => {
-//     upload(req,res, (err) => {
-//         if(err){
-//             res.render("pic",{
-//                 msg: err
-//             });
-//         }
-//         else{
-//             console.log(req.file.filename);
-//             const newpic=new photo({
-//                 picname: req.file.filename
-//             });
-//             newpic.save(function(err){
-//                 if(!err)
-//                 res.redirect("/");
-//             });
-//         }
-//     });
-// });
+
 
 app.get("/post/:topic",function(request,response){
     const search=request.params.topic;
@@ -144,20 +119,54 @@ app.post("/updatepost",function(request,response){
 
 });
 
-app.post("/updatedpost",function(request,response){
-    const search=request.body.updatepost;
-    const changetitle=request.body.posttitle;
-    const changebody= request.body.postbody;
-    const changepicture= request.body.postphoto;
-    post.updateOne({title: search},{title: changetitle,postBody: changebody},function(err){
-        if(err)
-        console.log(err);
-        else
-        {
-            console.log("updated");
-            response.redirect("/account");
+app.post("/updatedpost",function(req,res){
+    
+   var changepicture;
+
+    upload(req,res, (err) => {
+        if(err){
+            res.render("pic",{
+                msg: err
+            });
+        }
+        else{
+            const search=req.body.updatepost;
+            const changetitle=req.body.posttitle;
+            const changebody= req.body.postbody;
+            console.log(search);
+            console.log(changetitle);
+            console.log(changebody);
+            if(req.file!==undefined)
+            {
+                 const changepicture=req.file.filename;
+                 
+            post.updateOne({title: search},{title: changetitle,postBody: changebody,picname: changepicture},function(err){
+                if(err)
+                console.log(err);
+                else
+                {
+                    console.log("updated");
+                    res.redirect("/account");
+                }
+        });
+
+            }
+            else
+            {
+                post.updateOne({title: search},{title: changetitle,postBody: changebody},function(err){
+                    if(err)
+                    console.log(err);
+                    else
+                    {
+                        console.log("updated");
+                        res.redirect("/account");
+                    }
+            });
+            }
+           
         }
     });
+  
 });
 
 
