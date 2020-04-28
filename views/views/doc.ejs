@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Doctor View</title>
+        <link rel="stylesheet" href="./assets/css/docview.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+                html, body {
+                      overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                
+                table{
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .card:hover{
+                box-shadow: 2px 2px 15px rgba(248, 225, 225, 0.562) !important;
+                }
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+                .ntable{
+                    border: 2px solid rgb(255, 255, 255) !important;
+                    box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            @media only screen and (max-width: 600px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 40% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 30% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 30% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 30% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card:hover{
+                box-shadow: 2px 2px 15px rgba(248, 225, 225, 0.562) !important;
+                }
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            }    
+            @media only screen and (max-width: 500px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 30% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 25% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 20% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 20% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            } 
+            @media only screen and (max-width: 450px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 25% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 15% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 15% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 15% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            } 
+            @media only screen and (max-width: 400px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 20% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 10% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 10% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 10% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            }
+            @media only screen and (max-width: 350px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 15% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 5% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 5% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 5% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            }     
+            @media only screen and (max-width: 300px) {
+                html, body {
+                    overflow-x: hidden;
+                            }
+                body{
+                margin: 0%;
+                background-color: #1b262c !important;
+                position: relative;
+                }
+                .card{
+                    margin-left: 10% !important;
+                    margin-right: auto;
+                    background-color: #fcf8e8 !important;
+                }
+                table{
+                    position: relative;
+                    margin-left: 15% !important;
+                    margin-right: auto;
+                    margin-top: 2%;
+                }
+                button{
+                    background-color: #0c7b93 !important;
+                }
+                hr{
+                    width:640px !important;
+                    border-top: solid !important;
+                    border-color: black solid !important;
+                }
+                .blog{
+                  margin-left: auto !important;
+                  margin-right: auto !important;
+                }
+                .card.mb-3{
+                  margin-left: 0% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card.text-center{
+                  margin-left: 0% !important;
+                  margin-right: auto% !important;
+                  max-width: 300px !important;
+                }
+                .card{
+                box-shadow: 2px 2px 200px rgba(0, 0, 0, 0.5),
+                            10px 10px 15px rgba(0,0,0,0.5),
+                            -1px -1px 30px rgba(0,0,0,0.2)!important;
+                }
+            }          
+        </style>
+    </head>
+    <body>
+        <centre>
+            <div class="card" style="width: 14rem; height:500px; margin-top: 10%;">
+                <img src="./assets/images/image3.png" class="card-img-top" alt="...">
+                <div class="card-body" style="background-color: #eae7d9 !important;">
+                  <h5 class="card-title" style="background-color: #eae7d9 !important;">Doctor name</h5>
+                  <p class="card-text"style="background-color: #eae7d9 !important;">Qualifications or specialization of doctor</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" style="background-color: #eae7d9 !important;">Hospital,City</li>
+                  <li class="list-group-item" style="background-color: #eae7d9 !important;">Phone number</li>
+                  <li class="list-group-item" style="background-color: #eae7d9 !important;">Email</li>
+                </ul>
+              </div>
+              <br>
+              <table>
+                  <tr>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                            <a href="/compose" style="color: white;">New Blog</a>
+                          </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                            <a href="#blog" style="color: white;">Recent Blogs</a>
+                          </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                            <a href="#FAQ" style="color: white;">Messages</a>
+                          </button>
+                      </td>
+                  </tr>
+              </table>
+              <br>
+              <hr style="color: white;">
+              <br>
+              <div class="blog" id="blog">
+                <br>
+                <h2 style="text-align: center; color: white;">Blog Posts</h2>
+                <br>
+                <% for(var t=0;t<post.length;t++){ %>
+                   
+                    
+                    
+                <div class="card mb-3" style="max-width: 700px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="./uploads/<%= post[t].picname %>" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                            <form action="/updatepost" method="post">
+                                <button  onChange="this.form.submit()" name="updatepost" value="<%= post[t].title %>" class="btn btn-primary">Update</button>
+                                </form>
+                            <form action="/delpost" method="POST">
+                            <button  onChange="this.form.submit()" name="delpost" value="<%= post[t].title %>" class="btn btn-primary">Delete</button>
+                          <h5 class="card-title"><%= post[t].title %></h5>
+                          <p class="card-text"><%= post[t].postBody.substring(0,100) %> <a href="/post/<%= post[t]._id %>">"Read More</a></p>
+                          <p class="card-text"><small class="text-muted"><%= post[t].update %></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                   <% } %>  
+              </div>
+              <br>
+              <hr style="color: white;">
+              <br>
+              <div id="FAQ"></div>
+              <h2 style="text-align: center; color: white;">FAQ's by public</h2>
+              <br>
+              <div class="card text-center"  style="width: 550px;">
+                <div class="card-header">
+                  Featured
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Question 1</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                    Answer
+                  </button>
+                  <div class="collapse" id="collapseExample1">
+                    <div class="card card-body">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="max-width: 500px;" placeholder="Description"></textarea>
+                        <button type="submit" class="btn btn-primary newblog" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin-left: auto; margin-right: auto;">Post</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <br>
+            <hr style="color: white !important;">
+            <br>
+        </centre>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
